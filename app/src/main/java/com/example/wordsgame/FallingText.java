@@ -2,6 +2,7 @@ package com.example.wordsgame;
 
 import android.content.res.Resources;
 import android.view.animation.AccelerateInterpolator;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -14,6 +15,9 @@ public class FallingText {
 
     protected void CreateNewText(TextView fallingText, float bottomOfScreen){
         fallingText.findViewById(R.id.falling_text);
+
+
+        int score = 0;
         int randomIndex = new Random().nextInt(randomText.length);
         fallingText.setText(randomText[randomIndex]);
         randomIndex = new Random().nextInt(Resources.getSystem().getDisplayMetrics().widthPixels-20);
@@ -25,8 +29,11 @@ public class FallingText {
         fallingText.animate()
                 .translationY(bottomOfScreen)
                 .setInterpolator(new AccelerateInterpolator())
-                .setDuration(2000);
+                .setDuration(6000);
+
+
         fallingText.animate().withEndAction(new Runnable() {
+
             @Override
             public void run() {
                 CreateNewText(fallingText, bottomOfScreen);
