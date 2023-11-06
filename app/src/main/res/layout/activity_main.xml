@@ -23,6 +23,18 @@
             android:text="0"
             android:visibility="visible" />
 
+        <Button
+            android:id="@+id/retryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:text="Retry"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="200sp"
+            android:textSize="50sp"
+            />
+
     </RelativeLayout>
 
     <EditText
@@ -31,7 +43,7 @@
         android:layout_height="48dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Hello"
+        android:text=""
         android:layout_marginBottom="170sp"
         android:imeOptions="actionSend"
         android:layout_alignParentBottom="true"

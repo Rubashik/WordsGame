@@ -7,6 +7,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.BounceInterpolator;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -22,13 +23,16 @@ public class MainActivity extends AppCompatActivity {
         TextView falling_text = (TextView) findViewById(R.id.falling_text);
         EditText enteredText = (EditText) findViewById(R.id.editText);
         TextView scoreText = (TextView) findViewById(R.id.score);
+        Button retryButton = (Button) findViewById(R.id.retryButton);
 
         float bottomOfScreen = getResources().getDisplayMetrics()
                 .heightPixels - (falling_text.getHeight() * 4);
         //bottomOfScreen is where you want start animate to
 
         FallingText fallingClass = new FallingText();
-        fallingClass.CreateNewText(falling_text, bottomOfScreen);
+        fallingClass.CreateNewText(falling_text, bottomOfScreen, retryButton);
+
+
 
         enteredText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -51,5 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
 }
