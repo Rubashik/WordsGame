@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
                 if (falling_text.getText().toString().equalsIgnoreCase(s.toString())) {
-                    // Update the score and reset the EditText
+                    // Update the score, reset the EditText and create new word
                     score++;
                     scoreText.setText("Score: " + score);
                     enteredText.setText("");
@@ -60,9 +60,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
+        retryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Reset the game state
+                score = 0;
+                scoreText.setText("Score: " + score);
+                fallingClass.CreateNewText(falling_text, bottomOfScreen, retryButton);
+                retryButton.setVisibility(View.GONE); // Hide the retry button again
+            }
+        });
 
     }
 }
