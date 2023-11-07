@@ -13,9 +13,13 @@ public class FallingText {
 
 
     String[] randomText = new String[]{"Hello","Father","Mother","Chicken","Frog","Elephant","Car","Sun","Relation","Burger",
-            "Building","Pig","Server","Cloud","People","Sofa","Bird","Guitar","Phone","Rainbow","Accuracy"};
+            "Building","Pig","Server","Cloud","People","Sofa",
+            "Bird","Guitar","Phone","Rainbow","Accuracy","Android","Flower","Modern","Like",
+            "Drum","Lobster","Wheel","Dialog","Farm","Levitation","Engine","Heart","Lake","River",
+            "Boat","Block","Meat","Tree","Clutch","Brake","Pause","Jeans","Shirt","Hair","Football","Ball",
+            "Beach","Sand","Soap","Beaver","Bear","Snake","Sea","Sandstorm","Motherland"};
 
-    protected void CreateNewText(TextView fallingText, float bottomOfScreen, Button retryButton){
+    protected void CreateNewText(TextView fallingText, float bottomOfScreen, Button retryButton, int speed){
         fallingText.findViewById(R.id.falling_text);
         retryButton.findViewById(R.id.retryButton);
 
@@ -23,7 +27,7 @@ public class FallingText {
         int score = 0;
         int randomIndex = new Random().nextInt(randomText.length);
         fallingText.setText(randomText[randomIndex]);
-        randomIndex = new Random().nextInt(Resources.getSystem().getDisplayMetrics().widthPixels-40);
+        randomIndex = new Random().nextInt(Resources.getSystem().getDisplayMetrics().widthPixels*83/100);
 
         fallingText.setVisibility(View.VISIBLE);
         fallingText.setTranslationY(0);
@@ -33,7 +37,7 @@ public class FallingText {
         fallingText.animate()
                 .translationY(bottomOfScreen)
                 .setInterpolator(new AccelerateInterpolator())
-                .setDuration(7200);
+                .setDuration(speed);
 
 
         fallingText.animate().withEndAction(new Runnable() {

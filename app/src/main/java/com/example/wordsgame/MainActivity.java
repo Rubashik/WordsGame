@@ -16,6 +16,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private int score = 0;
+    final private int startingSpeed = 12000;
+    private int speed=startingSpeed;
 
 
     @Override
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         //bottomOfScreen is where you want start animate to
 
         FallingText fallingClass = new FallingText();
-        fallingClass.CreateNewText(falling_text, bottomOfScreen, retryButton);
+        fallingClass.CreateNewText(falling_text, bottomOfScreen, retryButton, speed);
 
 
 
@@ -50,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
                     score++;
                     scoreText.setText("Score: " + score);
                     enteredText.setText("");
-                    fallingClass.CreateNewText(falling_text, bottomOfScreen, retryButton);
+                    speed=speed-300;
+                    fallingClass.CreateNewText(falling_text, bottomOfScreen, retryButton, speed);
                 }
             }
 
@@ -65,8 +68,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Reset the game state
                 score = 0;
+                speed = startingSpeed;
+                enteredText.setText("");
                 scoreText.setText("Score: " + score);
-                fallingClass.CreateNewText(falling_text, bottomOfScreen, retryButton);
+                fallingClass.CreateNewText(falling_text, bottomOfScreen, retryButton, speed);
                 retryButton.setVisibility(View.GONE); // Hide the retry button again
             }
         });
