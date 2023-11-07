@@ -5,15 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.BounceInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private int score = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                     score++;
                     scoreText.setText("Score: " + score);
                     enteredText.setText("");
+                    fallingClass.CreateNewText(falling_text, bottomOfScreen, retryButton);
                 }
             }
 
@@ -55,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+
 
 
     }

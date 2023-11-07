@@ -25,6 +25,7 @@ public class FallingText {
         fallingText.setText(randomText[randomIndex]);
         randomIndex = new Random().nextInt(Resources.getSystem().getDisplayMetrics().widthPixels-40);
 
+        fallingText.setVisibility(View.VISIBLE);
         fallingText.setTranslationY(0);
         fallingText.setTranslationX(randomIndex);
 
@@ -32,16 +33,16 @@ public class FallingText {
         fallingText.animate()
                 .translationY(bottomOfScreen)
                 .setInterpolator(new AccelerateInterpolator())
-                .setDuration(6000);
+                .setDuration(7200);
 
 
         fallingText.animate().withEndAction(new Runnable() {
 
             @Override
             public void run() {
-
                 retryButton.setVisibility(View.VISIBLE);
-                CreateNewText(fallingText, bottomOfScreen, retryButton);
+                fallingText.animate().cancel();
+                fallingText.setText("restartTheGame");
             }
         });
 
