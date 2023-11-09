@@ -24,10 +24,9 @@ public class FallingText {
         retryButton.findViewById(R.id.retryButton);
 
 
-        int score = 0;
         int randomIndex = new Random().nextInt(randomText.length);
         fallingText.setText(randomText[randomIndex]);
-        randomIndex = new Random().nextInt(Resources.getSystem().getDisplayMetrics().widthPixels*83/100);
+        randomIndex = new Random().nextInt(Resources.getSystem().getDisplayMetrics().widthPixels*85/100);
 
         fallingText.setVisibility(View.VISIBLE);
         fallingText.setTranslationY(0);

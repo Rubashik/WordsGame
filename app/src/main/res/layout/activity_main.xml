@@ -2,10 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#bfbfbf">
     <RelativeLayout
+        android:id="@+id/gameZone"
         android:layout_width="match_parent"
-        android:layout_height="500sp">
+        android:layout_height="500sp"
+        android:background="#ffd95c">
         <TextView
             android:id="@+id/falling_text"
             android:layout_width="wrap_content"
