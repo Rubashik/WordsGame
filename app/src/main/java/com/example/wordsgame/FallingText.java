@@ -38,7 +38,6 @@ public class FallingText {
                 .setInterpolator(new AccelerateInterpolator())
                 .setDuration(speed);
 
-
         fallingText.animate().withEndAction(new Runnable() {
 
             @Override

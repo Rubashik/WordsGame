@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#bfbfbf">
+    <Button
+        android:id="@+id/startBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="40sp"
+        android:layout_marginHorizontal="20sp"
+        android:text="Start"
+        android:textSize="65sp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/startBtn"
+        android:layout_marginTop="15sp"
+        android:layout_marginHorizontal="20sp"
+        android:text="Records"
+        android:id="@+id/recordBtn"
+        android:textSize="65sp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recordBtn"
+        android:layout_marginTop="15sp"
+        android:layout_marginHorizontal="20sp"
+        android:text="Info"
+        android:id="@+id/infoBtn"
+        android:textSize="65sp"/>
+</RelativeLayout>
