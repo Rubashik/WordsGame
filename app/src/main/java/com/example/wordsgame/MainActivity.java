@@ -40,9 +40,13 @@ public class MainActivity extends AppCompatActivity {
         gameZone = (RelativeLayout) findViewById(R.id.gameZone);
 
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
 
         ViewTreeObserver viewTreeObserver = gameZone.getViewTreeObserver();
-
         viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -98,7 +102,5 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
-
-
     }
 }
