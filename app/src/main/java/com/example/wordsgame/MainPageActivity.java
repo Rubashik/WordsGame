@@ -11,13 +11,19 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class MainPageActivity extends AppCompatActivity {
+import com.example.wordsgame.dialogs.UsernameDialog;
+
+import org.w3c.dom.Text;
+
+public class MainPageActivity extends AppCompatActivity implements UsernameDialog.UsernameDialogListener {
 
     private String userName;
     private Button startButton;
     private Button recordButton;
     private Button infoButton;
+    private TextView usernameView;
     private Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,7 @@ public class MainPageActivity extends AppCompatActivity {
         startButton = (Button) findViewById(R.id.startBtn);
         recordButton = (Button) findViewById(R.id.recordBtn);
         infoButton = (Button) findViewById(R.id.infoBtn);
+        usernameView = (TextView) findViewById(R.id.usernameView);
     }
 
     @Override
@@ -104,6 +111,12 @@ public class MainPageActivity extends AppCompatActivity {
     }
 
     public void openDialog(){
+        UsernameDialog usernameDialog = new UsernameDialog();
+        usernameDialog.show(getSupportFragmentManager(), "Username Dialog");
+    }
 
+    @Override
+    public void applyText(String username) {
+        usernameView.setText(username);
     }
 }

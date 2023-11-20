@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="40sp"
+        android:layout_marginTop="90sp"
         android:layout_marginHorizontal="20sp"
         android:text="Start"
         android:textSize="65sp"/>
@@ -32,4 +32,12 @@
         android:text="Info"
         android:id="@+id/infoBtn"
         android:textSize="65sp"/>
+    <TextView
+        android:id="@+id/usernameView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="20sp"
+        android:textSize="23sp"
+        android:layout_marginTop="20sp"/>
 </RelativeLayout>
