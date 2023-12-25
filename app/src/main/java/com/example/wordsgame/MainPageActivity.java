@@ -23,8 +23,10 @@ public class MainPageActivity extends AppCompatActivity implements UsernameDialo
     private Button startButton;
     private Button recordButton;
     private Button infoButton;
+    private Button changeNameBtn;
     private TextView usernameView;
     private Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,7 @@ public class MainPageActivity extends AppCompatActivity implements UsernameDialo
         startButton = (Button) findViewById(R.id.startBtn);
         recordButton = (Button) findViewById(R.id.recordBtn);
         infoButton = (Button) findViewById(R.id.infoBtn);
+        changeNameBtn = (Button) findViewById(R.id.changeNameBtn);
         usernameView = (TextView) findViewById(R.id.usernameView);
     }
 
@@ -40,7 +43,10 @@ public class MainPageActivity extends AppCompatActivity implements UsernameDialo
     protected void onStart() {
         super.onStart();
 
-        openDialog();
+        if (usernameView.getText().toString().isEmpty()) {
+            openUsernameDialog();
+        }
+
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +104,13 @@ public class MainPageActivity extends AppCompatActivity implements UsernameDialo
 
             }
         });
+
+        changeNameBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openUsernameDialog();
+            }
+        });
     }
 
     @Override
@@ -110,7 +123,7 @@ public class MainPageActivity extends AppCompatActivity implements UsernameDialo
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
     }
 
-    public void openDialog(){
+    public void openUsernameDialog() {
         UsernameDialog usernameDialog = new UsernameDialog();
         usernameDialog.show(getSupportFragmentManager(), "Username Dialog");
     }
