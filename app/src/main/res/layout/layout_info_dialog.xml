@@ -3,11 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16sp">
-    
-    <EditText
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username"
-        android:id="@+id/edit_username"/>
+        android:id="@+id/infoText"
+        android:text="The player should enter words at speed.
+         The game ends when the word reaches the end of the playing area.
+         The results of the game are stored in the record table."
+        android:textSize="20sp"/>
+
 
 </RelativeLayout>

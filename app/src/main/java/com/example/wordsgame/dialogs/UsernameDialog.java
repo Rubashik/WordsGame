@@ -9,7 +9,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
@@ -27,7 +26,7 @@ public class UsernameDialog extends AppCompatDialogFragment {
         AlertDialog.Builder builder =  new AlertDialog.Builder(getActivity());
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.layout_dialog, null);
+        View view = inflater.inflate(R.layout.layout_username_dialog, null);
 
         builder.setView(view)
                 .setTitle("Enter your name (up to 20 symbols):")

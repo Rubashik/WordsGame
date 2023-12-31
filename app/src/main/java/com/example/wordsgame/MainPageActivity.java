@@ -13,6 +13,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.wordsgame.dialogs.InfoDialog;
 import com.example.wordsgame.dialogs.UsernameDialog;
 
 import org.w3c.dom.Text;
@@ -97,8 +98,9 @@ public class MainPageActivity extends AppCompatActivity implements UsernameDialo
                 infoButton.animate().withEndAction(new Runnable() {
                     @Override
                     public void run() {
-                        intent = new Intent(MainPageActivity.this, MainActivity.class);
-                        startActivity(intent);
+                        InfoDialog infoDialog = new InfoDialog();
+                        infoDialog.show(getSupportFragmentManager(), "Info Dialog");
+                        infoButton.setTranslationY(0);
                     }
                 });
 
