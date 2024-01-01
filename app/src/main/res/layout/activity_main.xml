@@ -8,7 +8,7 @@
         android:id="@+id/gameZone"
         android:layout_width="match_parent"
         android:layout_height="500sp"
-        android:background="#ffd95c">
+        android:background="#ffffff">
         <TextView
             android:id="@+id/falling_text"
             android:layout_width="wrap_content"

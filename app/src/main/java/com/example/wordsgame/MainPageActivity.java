@@ -2,8 +2,6 @@ package com.example.wordsgame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -15,8 +13,6 @@ import android.widget.TextView;
 
 import com.example.wordsgame.dialogs.InfoDialog;
 import com.example.wordsgame.dialogs.UsernameDialog;
-
-import org.w3c.dom.Text;
 
 public class MainPageActivity extends AppCompatActivity implements UsernameDialog.UsernameDialogListener {
 
@@ -61,13 +57,13 @@ public class MainPageActivity extends AppCompatActivity implements UsernameDialo
                 startButton.animate().withEndAction(new Runnable() {
                     @Override
                     public void run() {
-                        intent = new Intent(MainPageActivity.this, MainActivity.class);
+                        intent = new Intent(MainPageActivity.this, GameActivity.class);
                         startActivity(intent);
                     }
                 });
 
             }
-        });
+        });//Running game
 
         recordButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,13 +75,13 @@ public class MainPageActivity extends AppCompatActivity implements UsernameDialo
                 recordButton.animate().withEndAction(new Runnable() {
                     @Override
                     public void run() {
-                        intent = new Intent(MainPageActivity.this, MainActivity.class);
+                        intent = new Intent(MainPageActivity.this, GameActivity.class);
                         startActivity(intent);
                     }
                 });
 
             }
-        });
+        });//Opening records table
 
         infoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,14 +101,14 @@ public class MainPageActivity extends AppCompatActivity implements UsernameDialo
                 });
 
             }
-        });
+        }); //Running InfoDialog
 
         changeNameBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openUsernameDialog();
             }
-        });
+        });//Button to change name of player
     }
 
     @Override
