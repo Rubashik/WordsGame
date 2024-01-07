@@ -1,7 +1,9 @@
 package com.example.wordsgame;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.example.wordsgame.database.PlayerViewModel;
+import com.example.wordsgame.database.entity.PlayerEntity;
 
 
 public class GameActivity extends AppCompatActivity {
@@ -24,10 +29,13 @@ public class GameActivity extends AppCompatActivity {
     private TextView scoreText;
     private Button retryButton;
     private RelativeLayout gameZone;
+    private String name;
+    private PlayerViewModel playerViewModel;
+
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -37,7 +45,11 @@ public class GameActivity extends AppCompatActivity {
         retryButton = (Button) findViewById(R.id.retryButton);
         gameZone = (RelativeLayout) findViewById(R.id.gameZone);
 
+        Intent intent = new Intent();
+        Bundle bundle = getIntent().getExtras();
+        name = bundle.getString("USER_NAME");
 
+        playerViewModel = new ViewModelProvider(this).get(PlayerViewModel.class);
     }
 
     @Override
@@ -89,12 +101,18 @@ public class GameActivity extends AppCompatActivity {
                 retryButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        //Update records
+                        PlayerEntity player = new PlayerEntity(name,score);
+                        playerViewModel.insert(player);
+
+
+
                         // Reset the game state
                         score = 0;
                         speed = startingSpeed;
                         enteredText.setText("");
                         scoreText.setText("Score: " + score);
-                        fallingClass.CreateNewText(falling_text, bottomOfScreen, retryButton, speed);
+                        fallingClass.CreateNewText(falling_text,  bottomOfScreen, retryButton, speed);
                         retryButton.setVisibility(View.GONE); // Hide the retry button again
                     }
                 });

@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.wordsgame.dialogs.InfoDialog;
 import com.example.wordsgame.dialogs.UsernameDialog;
+import com.example.wordsgame.dialogs.records.Records;
 
 public class MainPageActivity extends AppCompatActivity implements UsernameDialog.UsernameDialogListener {
 
@@ -34,6 +35,8 @@ public class MainPageActivity extends AppCompatActivity implements UsernameDialo
         infoButton = (Button) findViewById(R.id.infoBtn);
         changeNameBtn = (Button) findViewById(R.id.changeNameBtn);
         usernameView = (TextView) findViewById(R.id.usernameView);
+
+
     }
 
     @Override
@@ -58,6 +61,7 @@ public class MainPageActivity extends AppCompatActivity implements UsernameDialo
                     @Override
                     public void run() {
                         intent = new Intent(MainPageActivity.this, GameActivity.class);
+                        intent.putExtra("USER_NAME", usernameView.getText().toString());
                         startActivity(intent);
                     }
                 });
@@ -75,7 +79,7 @@ public class MainPageActivity extends AppCompatActivity implements UsernameDialo
                 recordButton.animate().withEndAction(new Runnable() {
                     @Override
                     public void run() {
-                        intent = new Intent(MainPageActivity.this, GameActivity.class);
+                        intent = new Intent(MainPageActivity.this, Records.class);
                         startActivity(intent);
                     }
                 });
@@ -130,4 +134,6 @@ public class MainPageActivity extends AppCompatActivity implements UsernameDialo
     public void applyText(String username) {
         usernameView.setText(username);
     }
+
+
 }
