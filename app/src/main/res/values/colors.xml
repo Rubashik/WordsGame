@@ -3,5 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="my_light_primary">#d69600</color>
-    <color name="my_dark_primary">#441552</color>
+    <color name="statBar_color">#FE9B03</color>
+    <color name="btn_color">#3EFFFFFF</color>
+
 </resources>

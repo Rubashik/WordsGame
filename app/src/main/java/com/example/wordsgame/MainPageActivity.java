@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.wordsgame.dialogs.InfoDialog;
@@ -21,7 +22,7 @@ public class MainPageActivity extends AppCompatActivity implements UsernameDialo
     private Button startButton;
     private Button recordButton;
     private Button infoButton;
-    private Button changeNameBtn;
+    private ImageButton changeNameBtn;
     private TextView usernameView;
     private Intent intent;
 
@@ -33,7 +34,7 @@ public class MainPageActivity extends AppCompatActivity implements UsernameDialo
         startButton = (Button) findViewById(R.id.startBtn);
         recordButton = (Button) findViewById(R.id.recordBtn);
         infoButton = (Button) findViewById(R.id.infoBtn);
-        changeNameBtn = (Button) findViewById(R.id.changeNameBtn);
+        changeNameBtn = (ImageButton) findViewById(R.id.changeNameBtn);
         usernameView = (TextView) findViewById(R.id.usernameView);
 
 
@@ -132,7 +133,7 @@ public class MainPageActivity extends AppCompatActivity implements UsernameDialo
 
     @Override
     public void applyText(String username) {
-        usernameView.setText(username);
+        usernameView.setText("Hi,"+username+"!");
     }
 
 

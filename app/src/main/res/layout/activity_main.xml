@@ -7,23 +7,27 @@
     <RelativeLayout
         android:id="@+id/gameZone"
         android:layout_width="match_parent"
-        android:layout_height="500sp"
-        android:background="#ffffff">
+        android:layout_height="500dp"
+        android:background="@drawable/backg_gradient">
         <TextView
             android:id="@+id/falling_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:text="Hello" />
+            android:text="Hello"
+            android:textSize="20sp"
+            android:fontFamily="@font/alfa_slab_one"/>
 
         <TextView
             android:id="@+id/score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="20sp"
-            android:layout_marginTop="5sp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="30dp"
             android:text="0"
+            android:fontFamily="@font/alfa_slab_one"
             android:visibility="visible" />
 
         <Button
@@ -31,11 +35,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"
+            android:stateListAnimator="@null"
+            app:cornerRadius="15dp"
             android:text="Retry"
+            android:backgroundTint="@color/btn_color"
+            android:fontFamily="@font/alfa_slab_one"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="200sp"
-            android:textSize="50sp"
+            android:layout_marginBottom="200dp"
+            android:textSize="50dp"
             />
 
     </RelativeLayout>
@@ -47,7 +55,8 @@
         android:hint="Enter here"
         android:ems="10"
         android:inputType="text"
-        android:layout_marginBottom="250sp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:layout_marginBottom="250dp"
         android:imeOptions="actionSend"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"/>

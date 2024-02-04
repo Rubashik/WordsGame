@@ -88,6 +88,8 @@ public class GameActivity extends AppCompatActivity {
                             scoreText.setText("Score: " + score);
                             enteredText.setText("");
                             speed=speed-300;
+                            fallingClass.setEntered(true);
+                            fallingClass.stopAnimation();
                             fallingClass.CreateNewText(falling_text, bottomOfScreen, retryButton, speed);
                         }
                     }
